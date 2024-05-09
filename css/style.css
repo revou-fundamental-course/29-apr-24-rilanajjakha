@@ -266,22 +266,3 @@ footer {
     }
 }
 
-
-
-.core-item {
-    height: auto;
-    width: 100%;
-    border: 1px solid;
-    margin: 20px;
-    overflow: hidden; /* Menghindari gambar yang meluas keluar dari batasannya */
-    position: relative; /* Menetapkan posisi relatif untuk kontainer gambar */
-}
-
-.core-item > img {
-    position: absolute; /* Mengatur posisi absolut untuk gambar */
-    top: 0; /* Menetapkan posisi atas gambar */
-    left: 0; /* Menetapkan posisi kiri gambar */
-    width: 100%; /* Mengisi lebar kontainer */
-    height: 100%; /* Mengisi tinggi kontainer */
-    object-fit: cover; /* Menyamakan ukuran gambar */
-}
