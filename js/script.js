@@ -1,7 +1,8 @@
-// ini js
+document.addEventListener("DOMContentLoaded", function() {
+    const menuBtn = document.querySelector("#menu-btn");
+    const navbar = document.querySelector(".navbar");
 
-function validation() {
-    console.log('Good');
-}
-
-document.getElementById('home-btn').addEventListener('click', () => validation())
+    menuBtn.addEventListener("click", function() {
+        navbar.classList.toggle("button");
+    });
+});

@@ -2,7 +2,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .nav-container {
-    display: flex;
+    display:flex;
     justify-content: space-between;
     padding-left: 32px;
     padding-right: 32px;
@@ -15,10 +15,10 @@ body {
     background-color: white;
     border-radius: 8px;
 }
-img {
-    width: 40px;
-    height: auto;
-    background-repeat: no-repeat;
+h3 {
+    color: orangered;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
 }
 .content-container > header {
     text-align: center;
@@ -27,33 +27,107 @@ img {
     display: flex;
 }
 .core-item {
-    height: 200px;
+    height: auto;
     width: 100%;
     border: 1px solid;
-    margin: 18px;
+    margin: 20px;
+    overflow: hidden; 
+    position: relative; 
+}
+
+.core-item > img {
+    position: absolute; 
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 90%; 
+    object-fit: cover; 
 }
 .core-item > header > h2 {
     text-align: center;
+    margin-top: 50px;
+}
+.core-item > header > p {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 30px;
 }
 .core-item.item-right {
-    background-color: lightgrey;
+    background-color: #FDE49E;
     border: 0;
     border-radius: 8px;
-}
-.item-form {
-    text-align: center;
+    height: 800px;
+    width: 50%;
+    margin-right: 60px;
 }
 
-.item-form > input {
-    height: 32px;
-    width: 50%;
-    margin-left: 8px;
+/* form  */
+.item-form {
+    height: auto;
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.item-form > input, select {
+    height: 40px;
+    width: 100%;
     border: 1px solid darkgrey;
     border-radius: 4px;
+    margin-bottom: 10px;
+} 
+.item-form > button {
+    height: 50px;
+    width: 100%;
+    margin-top: 15px;
+    border: 1px solid darkgrey;
+    border-radius: 4px;
+    background-color: white;
 } 
 
+/* CSS BAGIAN KIRI */
+.core-item.item-left {
+    background-color: white;
+    border: 0;
+    border-radius: 8px;
+    margin-left: 50px;
+}
+
+/* step */
+.step {
+    width: 800px;
+    background-color: white;
+    margin-left: 50px;
+    padding: 20px;
+}
+.step p {
+    text-align: left; 
+    margin-bottom: 20px; 
+}
+.step h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.info img {
+    width: 50px; 
+    height: auto;
+    margin-right: 20px;
+    border-radius: 100px;
+}
+.info article {
+    flex: 1; 
+}
+.info p {
+    margin: 5px;
+    font-size: 15px;
+}
 .tulisan {
-    background-color: antiquewhite;
+    background-color: #FDE49E;
     height: 200px;
     align-content: center;
     text-align: center;
@@ -62,4 +136,152 @@ img {
 .tulisan > h1 {
     font-size: 24px;
     font-weight: bold;
+}
+
+/* paket */
+.home-packages{
+    background: var(--light-bg);
+ }
+ 
+ .home-packages .box-container{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(3rem, 1fr));
+    gap: 2rem;
+ }
+ 
+ .home-packages .box-container .box{
+  /*  border:var(--border);*/
+    box-shadow: var(--box-shadow);
+    background: var(--white);
+ }
+ 
+ .home-packages .box-container .box:hover .image img{
+    transform: scale(1.1);
+ }
+ 
+ .home-packages .box-container .box .image{
+    height: 20rem;
+    overflow: hidden;
+ }
+ 
+ .home-packages .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+ }
+ 
+ .home-packages .box-container .box .content{
+    padding:2rem;
+    text-align: center;
+ }
+ 
+ .home-packages .box-container .box .content h3{
+    font-size: 2rem;
+    color:var(--black);
+ }
+ 
+ .home-packages .box-container .box .content p{
+    font-size: 1rem;
+    color:var(--light-black);
+    line-height: 2;
+    padding:1rem 0;
+ }
+ 
+ .home-packages .load-more{
+    text-align: center;
+    margin-top: 2rem;
+ }
+
+ /* closing */
+.closing {
+    text-align: center;
+    background-color: #FDE49E;
+}
+.closing > button {
+    width: 80px;
+    height: 30px;
+    background-color: white;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    background-color: black;
+    margin-bottom: 100px ;
+}
+
+
+/* media queries  */
+
+@media (max-width: 1200px) {
+    .core-content {
+        flex-direction: column;
+    }
+    .core-item.item-right {
+        width: 100%;
+        margin-right: 0;
+    }
+    .item-form {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-container > nav {
+        margin-top: 12px;
+    }
+    .nav-container > nav > button {
+        margin: 6px;
+    }
+    .core-item {
+        height: auto;
+    }
+    .item-form {
+        height: auto;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    .nav-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .core-item.item-left,
+    .core-item.item-right {
+        width: 100%;
+        margin: 20px 0;
+    }
+    .item-form {
+        padding: 10px;
+    }
+}
+
+
+
+.core-item {
+    height: auto;
+    width: 100%;
+    border: 1px solid;
+    margin: 20px;
+    overflow: hidden; /* Menghindari gambar yang meluas keluar dari batasannya */
+    position: relative; /* Menetapkan posisi relatif untuk kontainer gambar */
+}
+
+.core-item > img {
+    position: absolute; /* Mengatur posisi absolut untuk gambar */
+    top: 0; /* Menetapkan posisi atas gambar */
+    left: 0; /* Menetapkan posisi kiri gambar */
+    width: 100%; /* Mengisi lebar kontainer */
+    height: 100%; /* Mengisi tinggi kontainer */
+    object-fit: cover; /* Menyamakan ukuran gambar */
 }
